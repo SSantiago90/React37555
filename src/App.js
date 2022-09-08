@@ -1,15 +1,13 @@
 import "./App.css";
 import Footer from "./components/Footer/Footer";
+import Header from "./components/Header/Header";
+import ItemListContainer from "./components/Products/ItemListContainer";
 
 function App() {
-  let title = "Hola Comision 37555";
   return (
     <div className="App">
-      <header className="App-header">
-        <img src="/assets/logos_coderhouse.png" alt="logo" />
-        <h1>{title}</h1>
-      </header>
-      <Footer />
+      <Header />
+      <ItemListContainer />
       <Footer />
     </div>
   );
