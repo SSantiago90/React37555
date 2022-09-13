@@ -1,15 +1,13 @@
-import Logo from "../Logo/Logo";
-import CartWidget from "./CartWidget";
+import NavBar from "../NavBar/NavBar";
+import "./header.css";
 
 function Header() {
   let title = "Hola Coderhouse";
 
   return (
-    <header className="App-header">
-      <Logo />
-      <CartWidget />
-      <img src="/assets/logos_coderhouse.png" alt="logo" />
-      <h1>{title}</h1>
+    <header>
+      <NavBar />
+      <h1 className="header_title">{title}</h1>
     </header>
   );
 }

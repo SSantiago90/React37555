@@ -1,12 +1,22 @@
-import React from 'react'
+import React, { useState } from "react";
 import "./button.css";
 
-function Button({color, children}) {
+function Button({ children }) {
+  let [color, setColor] = useState("lightblue");
+
+  function handleClick() {
+    setColor("purple");
+  }
+
   return (
-    <button className="btn">
+    <button
+      style={{ backgroundColor: color }}
+      onClick={handleClick}
+      className="btn"
+    >
       {children}
-      </button>
-  )
+    </button>
+  );
 }
 
-export default Button
+export default Button;
