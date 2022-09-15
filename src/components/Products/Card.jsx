@@ -4,7 +4,7 @@ import "./card.css";
 
 function Card(props) {
   let { price, title, img, detail } = props;
-
+  /* Hooks */
   return (
     <div className="card">
       <div className="card-img">
@@ -15,7 +15,11 @@ function Card(props) {
         <p>{detail}</p>
         <h4>$ {price}</h4>
       </div>
-      <Button color="red">Ver más</Button>
+
+      <Button>
+        Ver más
+      </Button>
+
     </div>
   );
 }
