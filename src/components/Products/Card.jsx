@@ -1,10 +1,11 @@
 import React from "react";
 import Button from "../Button/Button";
+import ItemCount from "../ItemCount/ItemCount";
 import "./card.css";
 
 function Card(props) {
-  let { price, title, img, detail } = props;
-  /* Hooks */
+  let { price, title, img, detail, stock } = props;
+  
   return (
     <div className="card">
       <div className="card-img">
@@ -19,6 +20,7 @@ function Card(props) {
       <Button>
         Ver más
       </Button>
+      <ItemCount initial={1} stock={stock} />
 
     </div>
   );
