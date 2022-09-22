@@ -10,7 +10,7 @@ const data = [
     img: "/assets/alquileres/1.png",
   },
   {
-    id: 2,
+    id: 2, 
     title: "Casa 6 Ambientes",
     price: 2500,
     detail:
@@ -69,12 +69,33 @@ export default function getItems() {
   });
 }
 
-export function getSingleItem(idItem) {
+
+export function getItemsByCategory(cat) {
   return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      let itemFind = data.find((item) => item.id === idItem);
+
+    let itemFind = data.filter((item) => {
+      return item.category === cat;
+    });
+    setTimeout( () => {
+      console.log("Encontramos:",itemFind)
       if (itemFind) resolve(itemFind);
       else reject(new Error("item no encontrado"));
-    }, 1500);
+    }, 1500)
+
+  });
+
+}
+
+export function getSingleItem(idItem) {
+  return new Promise((resolve, reject) => {
+
+    let itemFind = data.find((item) => {
+      return item.id === parseInt(idItem);
+    });
+    setTimeout( () => {
+      if (itemFind) resolve(itemFind);
+      else reject(new Error("item no encontrado"));
+    }, 1500)
+
   });
 }

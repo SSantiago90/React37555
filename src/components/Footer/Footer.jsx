@@ -5,10 +5,12 @@ function Footer() {
     <>
       <footer className="footer">
         <h2>
-          <strong>Mi Ecommerce</strong>
+          <strong>Documentación</strong>
         </h2>
         <ul>
-          <li>Inicio</li>
+          <a href="https://reactrouter.com/es/main/start/tutorial">
+            <li>React Router Dom - </li>
+          </a>
           <li>Contacto</li>
           <li>Servicios</li>
         </ul>

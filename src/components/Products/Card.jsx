@@ -1,11 +1,13 @@
 import React from "react";
 import Button from "../Button/Button";
-import ItemCount from "../ItemCount/ItemCount";
 import "./card.css";
+import { Link } from "react-router-dom";
 
 function Card(props) {
-  let { price, title, img, detail, stock } = props;
-  
+  let { price, title, img, detail, id } = props;
+
+  const urlDetalle = `/alquiler/${id}`;
+
   return (
     <div className="card">
       <div className="card-img">
@@ -17,11 +19,9 @@ function Card(props) {
         <h4>$ {price}</h4>
       </div>
 
-      <Button>
-        Ver más
-      </Button>
-      <ItemCount initial={1} stock={stock} />
-
+      <Link to={urlDetalle}>
+        <Button>Ver más</Button>
+      </Link>
     </div>
   );
 }
