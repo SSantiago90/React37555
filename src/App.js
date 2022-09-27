@@ -13,9 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<ItemListContainer greeting="Hola Coder" />} />
 
-        <Route path="/categoria/:cat" element={
-          <ItemListContainer/>
-        }></Route> 
+        <Route path="/categoria/:cat" element={<ItemListContainer />}></Route>
 
         <Route path="/alquiler/:id" element={<ItemDetailContainer />} />
         <Route path="*" element={<h1>404: Te perdiste</h1>} />
@@ -24,16 +22,5 @@ function App() {
     </BrowserRouter>
   );
 }
-
-/* 
-  <BrowserRouter>
-  <Routes>
-    <Route path="algo" element={componente"/>
-*/
-
-// 1. Instalar ReactRouterDom
-// 2. Configurar nuestro Routing
-// 3. Definimos nuestras rutas con cada componente a mostrar
-// 4. Remplazar nuestras etiquetas <a> por <Link>
 
 export default App;

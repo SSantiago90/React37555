@@ -10,7 +10,7 @@ function Card(props) {
 
   return (
     <div className="card">
-      <div className="card-img">
+      <div onClick={props.onClickImagen} className="card-img">
         <img src={img} alt="card img"></img>
       </div>
       <div className="card-detail">

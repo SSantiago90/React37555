@@ -1,10 +1,20 @@
 
 .flexWrapper{
-  border: solid 1px #58c854;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  max-width: 820px;
+  width: 100%;
+  max-width: 980px;
+  border-radius: 5px;
   margin: 5px auto;
-  padding: 15px 5px;
+  padding: 30px 12px;
+  box-shadow: 0px 0px 5px #aaaaaa ;
+}
+
+.fxRow{
+  flex-direction: row;
+}
+
+.fxCol{
+  flex-direction: column;
 }

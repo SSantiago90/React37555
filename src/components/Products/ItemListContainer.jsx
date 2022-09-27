@@ -24,6 +24,9 @@ function ItemListContainer() {
         {data.map((item) => {
           return (
             <Card
+              onClickImagen={() => {
+                console.log("click card");
+              }}
               key={item.id}
               id={item.id}
               price={item.price}

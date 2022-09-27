@@ -1,28 +1,41 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import Button from "../Button/Button";
+import "./itemcount.css";
 
-function ItemCount(props) {
-  const count = "usamos-el-hook-de-state";
+// onAddToCart
+function ItemCount({ stock, onAddToCart }) {
+  const [count, setCount] = useState(1);
 
   function handleAdd() {
-    // solo sumar si la cantidad del contador no supera el stock
-    /* setCount(count + 1); */
+    if (count < stock) setCount(count + 1);
   }
 
   function handleSubstract() {
-    // solo restar si la cantidad no baja de 0
-    /* setCount(count - 1) */
+    console.log("ok");
+    if (count > 1) setCount(count - 1);
   }
 
-  function onAddToCart() {}
-
   return (
-    <div>
-      <div>
-        <button>-</button>
+    <div className="itemcount_container">
+      <div className="itemcount_control">
+        <Button color={"firebrick"} onClick={handleSubstract}>
+          -
+        </Button>
         <span>{count}</span>
-        <button>+</button>
+        <Button color="darkgreen" onClick={handleAdd}>
+          +
+        </Button>
       </div>
-      <button>Agregar al carrito</button>
+      <div className="itemcount_btns">
+        <Button
+          color="purple"
+          onClick={() => {
+            onAddToCart(count);
+          }}
+        >
+          Agregar al carrito
+        </Button>
+      </div>
     </div>
   );
 }
