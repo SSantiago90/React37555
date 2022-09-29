@@ -1,30 +1,26 @@
-import React from "react";
+import React, { useContext } from "react";
 import FlexWrapper from "../FlexWrapper/FlexWrapper";
 import ItemCount from "../ItemCount/ItemCount";
+// Importamos el hook y el CartContext
+import { cartCtx } from "../../context/cartContext";
 
-function ItemDetail({ course }) {
-  /* Crear un estado para guardar el valor del "count" del <ItemCount/> */
-  let estadoCart = false;
+function ItemDetail({ item }) {
+  // Conectarnos al context con useContext
+  const { addItem } = useContext(cartCtx);
 
   function handleAddToCart(count) {
-    alert(`agregaste al carrito! ${count}`);
+    addItem(item, count);
     /* Cambiamos el estado del ItemDetail */
   }
 
   return (
     <FlexWrapper rows={true}>
       <div className="main container">
-        <h1>{course.title}</h1>
-        <img src={course.img} alt={course.title} />
-        <h3>$ {course.price}</h3>
+        <h1>{item.title}</h1>
+        <img src={item.img} alt={item.title} />
+        <h3>$ {item.price}</h3>
       </div>
-
-      {/* rendering condicional */}
-      {estadoCart === false ? (
-        <ItemCount stock={5} onAddToCart={handleAddToCart} />
-      ) : (
-        <button>Finalizar Compra</button>
-      )}
+      <ItemCount stock={5} onAddToCart={handleAddToCart} />
     </FlexWrapper>
   );
 }
