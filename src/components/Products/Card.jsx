@@ -4,9 +4,10 @@ import "./card.css";
 import { Link } from "react-router-dom";
 
 function Card(props) {
-  let { price, title, img, detail, id } = props;
+  let { price, offer, title, img, detail, id } = props;
 
   const urlDetalle = `/alquiler/${id}`;
+  let classPrice = `priceTag ${offer && "offerTag"}`;
 
   return (
     <div className="card">
@@ -16,7 +17,7 @@ function Card(props) {
       <div className="card-detail">
         <h3>{title}</h3>
         <p>{detail}</p>
-        <h4>$ {price}</h4>
+        <h4 className={classPrice}>$ {price}</h4>
       </div>
 
       <Link to={urlDetalle}>

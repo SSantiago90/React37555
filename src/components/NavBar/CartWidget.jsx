@@ -7,7 +7,7 @@ function CartWidget() {
   return (
     <div>
       <span>X</span>
-      <span>{getTotalItemsInCart()}</span>
+      <span>{getTotalItemsInCart() > 0 && getTotalItemsInCart()}</span>
     </div>
   );
 }
