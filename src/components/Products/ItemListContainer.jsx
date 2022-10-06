@@ -3,7 +3,7 @@ import Card from "./Card";
 import { useParams } from "react-router-dom";
 import { Momentum } from "@uiball/loaders";
 
-import getItems, { getItemsByCategory } from "../../services/mockAPI";
+import { getItems, getItemsByCategory } from "../../services/firestore";
 
 function ItemListContainer() {
   const [data, setData] = useState([]);
@@ -18,9 +18,10 @@ function ItemListContainer() {
         .then((respuestaDatos) => setData(respuestaDatos))
         .finally(() => setIsLoading(false));
     } else {
-      getItemsByCategory(cat)
-        .then((respuestaDatos) => setData(respuestaDatos))
-        .finally(() => setIsLoading(false));
+      getItemsByCategory(cat).then((respuestaDatosFiltrados) =>
+        setData(respuestaDatosFiltrados)
+      )
+      .finally(() => setIsLoading(false));
     }
     return () => {
       console.log("Componente Item List desmontado");

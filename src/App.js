@@ -5,7 +5,6 @@ import ItemListContainer from "./components/Products/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-//4 . Importamos y renderizamos nuestro Provider
 import CartContextProvider from "./context/cartContext";
 import CartView from "./components/CartView/CartView";
 
