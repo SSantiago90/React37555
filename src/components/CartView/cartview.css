@@ -1,0 +1,15 @@
+.cartList{
+  border-spacing: 0;
+  width: 95%;
+  margin: 15px auto;
+  text-align: center;
+}
+
+.cartList_head{
+  background-color: #f582b9;
+  margin: 8px auto;
+}
+
+.cartList_row{
+  line-height: 46px;
+}

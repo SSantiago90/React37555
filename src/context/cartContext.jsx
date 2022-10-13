@@ -30,6 +30,12 @@ export default function CartContextProvider({ children }) {
     return total;
   }
 
+  function getTotalPriceInCart() {
+    let total = 0;
+    cart.forEach((item) => (total += item.count * item.price));
+    return total;
+  }
+
   function isInCart(id) {
     let found = cart.some((item) => item.id === id);
     return found;
@@ -37,7 +43,15 @@ export default function CartContextProvider({ children }) {
 
   return (
     //3. pasamos el objeto Value a los componentes hijos
-    <cartCtx.Provider value={{ cart, addItem, getTotalItemsInCart, isInCart }}>
+    <cartCtx.Provider
+      value={{
+        cart,
+        addItem,
+        getTotalItemsInCart,
+        isInCart,
+        getTotalPriceInCart,
+      }}
+    >
       {children}
     </cartCtx.Provider>
   );
