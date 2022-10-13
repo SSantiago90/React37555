@@ -137,8 +137,9 @@ export async function exportDataToFirestore() {
   ];
 
   const collectionRef = collection(firestore, "alquileres");
-  
-  for (let item of data) {   
+
+  for (let item of data) {
+    delete item.id;
     const newDoc = await addDoc(collectionRef, item);
     console.log("Doc created", newDoc.id);
   }
