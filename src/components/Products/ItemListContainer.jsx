@@ -7,7 +7,7 @@ import { getItems, getItemsByCategory } from "../../services/firestore";
 
 function ItemListContainer() {
   const [data, setData] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  let [isLoading, setIsLoading] = useState(true); 
 
   const { cat } = useParams();
 
@@ -18,17 +18,12 @@ function ItemListContainer() {
         .then((respuestaDatos) => setData(respuestaDatos))
         .finally(() => setIsLoading(false));
     } else {
-      getItemsByCategory(cat).then((respuestaDatosFiltrados) =>
-        setData(respuestaDatosFiltrados)
-      )
-      .finally(() => setIsLoading(false));
+      getItemsByCategory(cat)
+        .then((respuestaDatosFiltrados) => setData(respuestaDatosFiltrados))
+        .finally(() => setIsLoading(false));
     }
-    return () => {
-      console.log("Componente Item List desmontado");
-    };
   }, [cat]);
 
-  // 3. utilizando operador lógico &&
   return (
     <div>
       {isLoading ? (

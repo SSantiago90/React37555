@@ -11,7 +11,6 @@ function ItemCount({ stock, onAddToCart }) {
   }
 
   function handleSubstract() {
-    console.log("ok");
     if (count > 1) setCount(count - 1);
   }
 
@@ -26,6 +25,7 @@ function ItemCount({ stock, onAddToCart }) {
           +
         </Button>
       </div>
+
       <div className="itemcount_btns">
         <Button
           color="purple"
